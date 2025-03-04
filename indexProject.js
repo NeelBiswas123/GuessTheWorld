@@ -127,7 +127,7 @@ app.post("/add", async (req, res) => {
       [countryCode]
     );
 
-    // Fetch updated visited countries list & score
+    // Fetch updated visited countries list & score updated
     const updatedVisited = await db.query("SELECT country_code FROM visited_countries");
 
     res.render("index.ejs", {
