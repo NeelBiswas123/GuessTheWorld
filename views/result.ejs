@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; 
+        margin: 0;
+        background: #21252b; 
+        color: white; /* Ensure text is visible */
+        flex-direction: column; 
+        text-align: center;
+      }
+      
+      .gameOver {
+        font-size: 1.5rem;
+        margin-bottom: 20px; /* Space between text and button */
+        font-family: "Roboto",sans-serif;
+      }
+      
+      .goback {
+        font-family: "Roboto", sans-serif;
+        background: teal;
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        
+      }
+      
+      .goback:hover {
+        background: darkcyan;
+      }
+      </style>
+    
+</head>
+<body>
+    <p class="gameOver">Game over your score is <%=total%></p>
+    
+    <button class="goback" onclick="window.location.href='http://localhost:3000/';">Go back</button>
+
+</body>
+</html>
