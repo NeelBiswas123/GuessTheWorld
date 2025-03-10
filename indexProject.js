@@ -25,9 +25,9 @@ app.use(express.static("public"));
 app.get("/", async(err,res)=>{
   let countries = []
   const result = await db.query("SELECT country_code FROM visited_countries");
-  console.log(result.rows)
-
+  // console.log(result.rows)
   countries = (result.rows.map(country=>country.country_code))
+ 
 
   // console.log(countries)
   res.render("index.ejs",{countries, total:countries.length})
@@ -56,7 +56,7 @@ app.post("/add", async (req, res) => {
   try {
     const input = req.body["country"];
 
-    if (!input) {
+    if (!input || input.length < 3 ) {
       const visitedResult = await db.query("SELECT country_code FROM visited_countries");
       // res.status(404).json({ errors });
       return res.render("index.ejs", {
@@ -73,7 +73,7 @@ app.post("/add", async (req, res) => {
       [input.toLowerCase()]
     );
 
-    if (result.rows.length === 0) {
+    if (result.rows.length === 0 ) {
       const visitedResult = await db.query("SELECT country_code FROM visited_countries");
 
       // res.send(`Sorry No country Exist !! try again, Your score is ${visitedResult.rows.length} `);
