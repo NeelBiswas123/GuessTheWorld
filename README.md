@@ -17,7 +17,9 @@ create table country_list(
 id  serial primary key ,
 country_name varchar(255)
 ) 
+
 after creating country_list import data from the db folder to country_list 
+
 then
 copy the project in ur local machine and run the code you will find the result
 by default it will run on http://localhost:3000/ (feel free to customize in in index.js line 6)
