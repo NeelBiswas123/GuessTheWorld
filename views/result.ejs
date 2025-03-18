@@ -24,6 +24,7 @@
       }
       
       .goback {
+        text-decoration: none;
         font-family: "Roboto", sans-serif;
         background: teal;
         border: none;
@@ -43,7 +44,7 @@
 <body>
     <p class="gameOver">Game over your score is <%=total%></p>
     
-    <button class="goback" onclick="window.location.href='http://localhost:3000/';">Go back</button>
-
+    <!-- <button class="goback" onclick="window.location.href='http://localhost:3000/';">Go back</button> -->
+      <a class="goback" href="/">Go back</a>
 </body>
 </html>

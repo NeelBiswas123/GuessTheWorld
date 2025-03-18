@@ -544,5 +544,12 @@
 
   </script>
 </body>
-
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get("login") === "success") {
+    alert("New User Created");
+    // Remove the query parameter from the URL after showing the alert
+    window.history.replaceState({}, document.title, "/");
+  }
+</script>
 </html>
