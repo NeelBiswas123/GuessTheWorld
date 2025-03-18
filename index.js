@@ -28,6 +28,7 @@ app.use(express.static("public"));
 
 
 
+
 app.get("/", async(req,res)=>{
   let countries = []
   const result = await db.query("SELECT country_name FROM correct_countries");
