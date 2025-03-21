@@ -11,14 +11,24 @@ dotenv.config()
 const app = express();
 const port = 3000;
 
+//this is for local
+// const db = new pg.Client({
+//   user: "postgres",
+//   host: "localhost",
+//   database: "world",
+//   password: "123456",
+//   port: 5432,
+// });
 
+
+// this is for render deployment
 const db = new pg.Client({
-  user: "postgres",
-  host: "localhost",
-  database: "world",
-  password: "123456",
-  port: 5432,
+  connectionString: process.env.DATABASE_URL,  // ✅ Use Render's database URL
+  ssl: {
+    rejectUnauthorized: false, // ✅ Required for Render PostgreSQL
+  },
 });
+
 
 db.connect();
 
