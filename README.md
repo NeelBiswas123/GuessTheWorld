@@ -1,4 +1,4 @@
-See the preview images of my website at preview1 and preview2.jpg file
+See the preview images of my website at preview1 and preview2.png file
 
 READ the whole readme before trying it
 
